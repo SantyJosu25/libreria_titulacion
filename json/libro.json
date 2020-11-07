@@ -1,0 +1,54 @@
+{
+    "fields": [{
+            "name": "ISBN",
+            "type": "string"
+        },
+        {
+            "name": "Titulo",
+            "type": "string"
+        },
+        {
+            "name": "Fecha",
+            "type": "date"
+
+        },
+        {
+            "name": "PVP",
+            "type": "double"
+
+        },
+        {
+            "name": "editorial_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [{
+        "column": "editorial_id",
+        "references": "id",
+        "on": "editorials",
+        "onDelete": "cascade",
+        "onUpdate": "cascade"
+    }],
+    "relationships": [{
+        "name": "Editorial",
+        "type": "belongsTo",
+        "class": "App\\Models\\Editorial"
+    }],
+    "validations": [{
+            "field": "ISBN",
+            "rules": "required"
+        },
+        {
+            "field": "Titulo",
+            "rules": "required"
+        },
+        {
+            "field": "Fecha",
+            "rules": "required"
+        },
+        {
+            "field": "PVP",
+            "rules": "required"
+        }
+    ]
+}

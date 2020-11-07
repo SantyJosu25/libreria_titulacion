@@ -1,0 +1,36 @@
+{
+    "fields": [{
+            "name": "Nombre",
+            "type": "string"
+        },
+        {
+            "name": "Apellido",
+            "type": "string"
+        },
+        {
+            "name": "libro_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [{
+        "column": "libro_id",
+        "references": "id",
+        "on": "libros",
+        "onDelete": "cascade",
+        "onUpdate": "cascade"
+    }],
+    "relationships": [{
+        "name": "libro",
+        "type": "belongsTo",
+        "class": "App\\Models\\libro"
+    }],
+    "validations": [{
+            "field": "Nombre",
+            "rules": "required"
+        },
+        {
+            "field": "Apellido",
+            "rules": "required"
+        }
+    ]
+}

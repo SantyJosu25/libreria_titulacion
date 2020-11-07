@@ -1,0 +1,10 @@
+{
+    "fields": [{
+        "name": "Nombre",
+        "type": "string"
+    }],
+    "validations": [{
+        "field": "Nombre",
+        "rules": "required"
+    }]
+}
